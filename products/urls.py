@@ -2,7 +2,8 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from .models import ProductViewHistory
-from .services.flash_sale import FlashSaleListCreateView
+from .services.flash_sale import FlashSaleListCreateView, check_flash_sale
+from .services.product_view_history import ProductViewHistoryCreate
 from .views import ProductViewSet, ReviewViewSet, CategoryViewSet
 
 router = DefaultRouter()
