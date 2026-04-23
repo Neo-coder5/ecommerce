@@ -22,7 +22,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 
 class CustomPagination(PageNumberPagination):
-    page_size = 2
+    page_size = 3
 
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -32,7 +32,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     pagination_class = CustomPagination
 
     filter_backends = (django_filters.DjangoFilterBackend, filters.SearchFilter)
-    filter_class = ProductFilter
+    filterset_class = ProductFilter
     search_fields = ['name', 'description']
 
     def list(self, request, *args, **kwargs):
